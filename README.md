@@ -18,7 +18,7 @@ Next, update Composer from Terminal
 
 Once this operation completes, the final step is to add the service provider. Open `app/config/app.php`, and replace `Illuminate\Cache\CacheServiceProvider` with:
 
-	'Aheissenberger\Foundation\FoundationServiceProvider',
+	'Aheissenberger\MemcachierCache\CacheServiceProvider',
 
 Install the configuration files:
 
