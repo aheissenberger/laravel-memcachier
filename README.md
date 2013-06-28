@@ -34,4 +34,4 @@ Add your authentification details and servers to:
 	app/config/packages/aheissenberger/laravel-memcachier
 
 ## ToDo
-
+This code is not tested and has been implemented based on laravel-mongo-cache
