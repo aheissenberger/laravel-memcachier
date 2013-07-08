@@ -18,7 +18,7 @@ class MemcachierCacheManager extends Manager {
 		$connection->setSaslData($this->app['config']['cache.memcachier.username'], $this->app['config']['cache.memcachier.password']);
 		$connection->addServer($this->app['config']['cache.memcachier.servers'], 11211);
 
-		$prefix = $Config::get('memcachier::prefix');
+		$prefix = $this->app['config']['cache.prefix'];
 
 		return $this->repository(new MemcachierStore($connection, $prefix));
 	}
