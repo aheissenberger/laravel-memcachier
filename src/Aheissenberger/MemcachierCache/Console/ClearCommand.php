@@ -1,7 +1,7 @@
 <?php namespace Aheissenberger\MemcachierCache\Console;
 
 use Illuminate\Console\Command;
-use Illuminate\Cache\CacheManager;
+use Aheissenberger\MemcachierCache\MemcachierCacheManager;
 use Illuminate\Filesystem\Filesystem;
 
 class ClearCommand extends Command {
@@ -37,7 +37,7 @@ class ClearCommand extends Command {
 	/**
 	 * Create a new cache clear command instance.
 	 *
-	 * @param  \Illuminate\Cache\CacheManager  $cache
+	 * @param  \Aheissenberger\MemcachierCache\MemcachierCacheManager  $cache
 	 * @param  \Illuminate\Filesystem\Filesystem  $files
 	 * @return void
 	 */
