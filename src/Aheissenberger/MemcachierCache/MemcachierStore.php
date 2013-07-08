@@ -2,6 +2,7 @@
 
 use Illuminate\Cache\StoreInterface;
 use Illuminate\Encryption\Encrypter;
+use Memcached;
 
 class MemcachierStore implements StoreInterface {
 
@@ -26,7 +27,7 @@ class MemcachierStore implements StoreInterface {
 	 * @param  string     $prefix
 	 * @return void
 	 */
-	public function __construct($memcachier, $prefix = '')
+	public function __construct(Memcached $memcachier, $prefix = '')
 	{
 		$this->prefix = $prefix.':';
 		$this->memcachier = $memcachier;
