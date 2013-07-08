@@ -28,7 +28,7 @@ class CacheServiceProvider extends ServiceProvider {
 			return new MemcachedConnector;
 		});
 
-		$this->registerCommands();
+		// $this->registerCommands();
 	}
 
 	/**
@@ -36,7 +36,7 @@ class CacheServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-/*	public function registerCommands()
+	public function registerCommands()
 	{
 		$this->app['command.cache.clear'] = $this->app->share(function($app)
 		{
@@ -45,7 +45,7 @@ class CacheServiceProvider extends ServiceProvider {
 
 		$this->commands('command.cache.clear');
 	}
-*/
+
 	/**
 	 * Get the services provided by the provider.
 	 *
