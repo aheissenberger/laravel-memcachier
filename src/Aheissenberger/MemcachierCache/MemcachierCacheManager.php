@@ -12,12 +12,12 @@ class MemcachierCacheManager extends Manager {
 	 *
 	 * @return MemcachierCache\MemcachierStore
 	 */
-	protected function createMemcachierDriver()
+	protected function createMemcachedDriver()
 	{
 		$connection = new Memcached();
 		$connection->setOption(Memcached::OPT_BINARY_PROTOCOL, 1);
-		$connection->setSaslData($this->app['config']['cache.memcachier.username'], $this->app['config']['cache.memcachier.password']);
-		$connection->addServer($this->app['config']['cache.memcachier.servers'], 11211);
+		$connection->setSaslData($this->app['config']['cache.memcached.username'], $this->app['config']['cache.memcached.password']);
+		$connection->addServer($this->app['config']['cache.memcached.servers'], 11211);
 
 		$prefix = $this->app['config']['cache.prefix'];
 

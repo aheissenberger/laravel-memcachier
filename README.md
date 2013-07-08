@@ -1,6 +1,7 @@
 # [Memcachier](http://memcachier.com/) Cache Driver for [Laravel 4](http://laravel.com/)
 
 This is a replacement for the builtin CacheServiceProvider with support for Memcachier a managed hosted Memcache.
+As it replaces Memcached you can also use this driver to support sessions.
 
 
 ## Installation
@@ -23,11 +24,11 @@ Once this operation completes, the final step is to add the service provider. Op
 
 ## Configuration
 
-Open `app/config/cache.php` and find the `driver` key and change to `memcachier`.
+Open `app/config/cache.php` and find the `driver` key and change to `memcached`.
 
-Add this lines with authentification details and servers to:
+Replace the existing `memcached` configuration with this lines with authentification details and server:
 
-		'memcachier' => array(
+		'memcached' => array(
 			'username' => 'un', 'password' => 'pw', 'servers' => '1.1.1.1.1'
 		),
 
