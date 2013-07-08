@@ -1,6 +1,7 @@
 <?php namespace Aheissenberger\MemcachierCache;
 
 use Illuminate\Support\Manager;
+use Memcached;
 use Config;
 
 class MemcachierCacheManager extends Manager {
