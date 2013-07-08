@@ -15,8 +15,8 @@ class MemcachierCacheManager extends Manager {
 	{
 		$connection = new Memcached();
 		$connection->setOption(Memcached::OPT_BINARY_PROTOCOL, 1);
-		$connection->setSaslData(Config::get('memcachier::username'), Config::get('memcachier::password'));
-		$connection->addServer(Config::get('memcachier::servers'), 11211);
+		$connection->setSaslData($this->app['config']['cache.memcachier.username'], $this->app['config']['cache.memcachier.password']);
+		$connection->addServer($this->app['config']['cache.memcachier.servers'], 11211);
 
 		$prefix = $Config::get('memcachier::prefix');
 

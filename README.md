@@ -20,18 +20,17 @@ Once this operation completes, the final step is to add the service provider. Op
 
 	'Aheissenberger\MemcachierCache\CacheServiceProvider',
 
-Install the configuration files:
-
-	$ php artisan config:publish aheissenberger/laravel-memcachier
-
 
 ## Configuration
 
 Open `app/config/cache.php` and find the `driver` key and change to `memcachier`.
 
-Add your authentification details and servers to:
+Add this lines with authentification details and servers to:
 
-	app/config/packages/aheissenberger/laravel-memcachier
+		'memcachier' => array(
+			'username' => 'un', 'password' => 'pw', 'servers' => '1.1.1.1.1'
+		),
+
 
 ## ToDo
 This code is not tested and has been implemented based on laravel-mongo-cache
