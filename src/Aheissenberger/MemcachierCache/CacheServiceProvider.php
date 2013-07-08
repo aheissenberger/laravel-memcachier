@@ -40,7 +40,7 @@ class CacheServiceProvider extends ServiceProvider {
 	{
 		$this->app['command.cache.clear'] = $this->app->share(function($app)
 		{
-			return new Aheissenberger\Console\ClearCommand($app['cache'], $app['files']);
+			return new Aheissenberger\MemcachierCache\Console\ClearCommand($app['cache'], $app['files']);
 		});
 
 		$this->commands('command.cache.clear');
