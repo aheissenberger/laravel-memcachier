@@ -1,7 +1,7 @@
 <?php namespace Aheissenberger\MemcachierCache;
 
 use Illuminate\Cache\StoreInterface;
-use Illuminate\Encryption\Encrypter;
+//use Illuminate\Encryption\Encrypter;
 use Memcached;
 
 class MemcachierStore implements StoreInterface {
