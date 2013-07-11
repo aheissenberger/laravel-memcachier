@@ -20,7 +20,7 @@ class MemcachierCacheManager extends Manager {
 			$connection->setSaslData($this->app['config']['cache.memcached.username'], $this->app['config']['cache.memcached.password']);
 			$connection->addServer($this->app['config']['cache.memcached.servers'], 11211);
 		} else { // try to connect to local memcached server
-			$connection->addServer($this->app['config']['cache.memcached'][0]['host'], $this->app['config']['cache.memcached'][0]['port']);
+			$connection->addServer($this->app['config']['cache.memcached.host'], $this->app['config']['cache.memcached.port']);
 		}
 
 		$prefix = $this->app['config']['cache.prefix'];

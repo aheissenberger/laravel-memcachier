@@ -32,7 +32,12 @@ Replace the existing `memcached` configuration with this lines with authentifica
 			'username' => 'un', 'password' => 'pw', 'servers' => '1.1.1.1.1'
 		),
 
-If the driver cannot find `cache.memcached.username` it will try to load `cache.memcached[0]['host']` and connects to this server.
-You can use this to simulate memcachier with your local memcached server.
+If the driver cannot find `cache.memcached.username` it will try to load `cache.memcached.host']` and connects to this server.
+You can use this to simulate memcachier with your local memcached server. Multiple Servers are not supported!!!
+
+		'memcached' => array(
+			'host' => '127.0.0.1', 'port' => 11211
+		),
+
 
 enjoy
