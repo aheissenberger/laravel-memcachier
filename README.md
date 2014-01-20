@@ -9,7 +9,7 @@ As it replaces Memcached you can also use this driver to support sessions.
 Begin by installing this package through Composer. Edit your project's `composer.json` file to require `aheissenberger/laravel-memcachier`
 
 	"require": {
-	    "laravel/framework": "4.0.*",
+	    "laravel/framework": "4.1.*",
 	    "aheissenberger/laravel-memcachier": "dev-master"
 	}
 
@@ -29,14 +29,14 @@ Open `app/config/cache.php` and find the `driver` key and change to `memcached`.
 Replace the existing `memcached` configuration with this lines with authentification details and server:
 
 		'memcached' => array(
-			'username' => 'un', 'password' => 'pw', 'servers' => '1.1.1.1.1'
+			'username' => 'un', 'password' => 'pw', 'servers' => '1.1.1.1.1', 'weight' => 100
 		),
 
 If the driver cannot find `cache.memcached.username` it will try to load `cache.memcached.host']` and connects to this server.
 You can use this to simulate memcachier with your local memcached server. Multiple Servers are not supported!!!
 
 		'memcached' => array(
-			'host' => '127.0.0.1', 'port' => 11211
+			'host' => '127.0.0.1', 'port' => 11211, 'weight' => 100
 		),
 
 
