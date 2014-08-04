@@ -17,7 +17,7 @@ class MemcachierCacheManager extends Manager {
 		$connection = new Memcached();
 		if ($this->app['config']['cache.memcached.username']!=null) { // memcachier config exists
 			$connection->setOption(Memcached::OPT_BINARY_PROTOCOL, 1);
-			$connection->setSaslData($this->app['config']['cache.memcached.username'], $this->app['config']['cache.memcached.password']);
+			$connection->setSaslAuthData($this->app['config']['cache.memcached.username'], $this->app['config']['cache.memcached.password']);
 			$connection->addServer($this->app['config']['cache.memcached.servers'], $this->app['config']['cache.memcached.port'],$this->app['config']['cache.memcached.weight']);
 		} else { // try to connect to local memcached server
 			$connection->addServer($this->app['config']['cache.memcached.host'], $this->app['config']['cache.memcached.port'],$this->app['config']['cache.memcached.weight']);
